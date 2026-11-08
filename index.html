@@ -154,6 +154,76 @@
                 <p id="error-message">Error: Enter a full email address, such as name@example.com. Your entry is shown
                     above so you can fix it.</p>
             </div>
+
+            <h3>State matrix</h3>
+            <div class="table-region" role="region" aria-label="State matrix" tabindex="0">
+                <table>
+                    <caption>How each form state is shown and what the user should do</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">State</th>
+                            <th scope="col">What causes it</th>
+                            <th scope="col">How it is shown</th>
+                            <th scope="col">Entry kept?</th>
+                            <th scope="col">What to do next</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Default</th>
+                            <td>Field has not been used yet.</td>
+                            <td>Gray border with a visible label.</td>
+                            <td>N/A</td>
+                            <td>Fill in the field.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Focus</th>
+                            <td>User clicks or tabs into the field.</td>
+                            <td>Gold outline around the field.</td>
+                            <td>Yes</td>
+                            <td>Type or choose an answer.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Required</th>
+                            <td>The field must be filled before submitting.</td>
+                            <td>"(required)" written in the label.</td>
+                            <td>Yes</td>
+                            <td>Complete the field before submitting.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Valid</th>
+                            <td>Entry meets the field's rules.</td>
+                            <td>"✓ Looks good." text under the field.</td>
+                            <td>Yes</td>
+                            <td>Move to the next field.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Invalid</th>
+                            <td>Entry breaks a rule, such as 8 plants when the limit is 5.</td>
+                            <td>"Error:" message, red border, and red bar on the left.</td>
+                            <td>Yes, the entry stays in the field.</td>
+                            <td>Follow the message and change the entry.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Disabled</th>
+                            <td>Option is not available, such as a full session.</td>
+                            <td>Grayed out and cannot be selected; label says "(full)".</td>
+                            <td>N/A</td>
+                            <td>Choose a different option.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Server-returned error</th>
+                            <td>The fictional server rejected the email "sam.example" because it is missing "@" and
+                                a domain.</td>
+                            <td>Error summary at the top with a link to the field, plus an "Error:" message, red
+                                border, and red bar.</td>
+                            <td>Yes, "sam.example" stays in the field so the user can fix it.</td>
+                            <td>Click the summary link, correct the email to a full address such as
+                                name@example.com, and submit again.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
         <section id="documentation">
             <h2>F2 and F6 · Planning and Evidence</h2>
