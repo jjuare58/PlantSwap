@@ -27,16 +27,25 @@
         </section>
         <form action="" method="get">
             <fieldset>
-                <legend>F3 · Contact information</legend>
-                <p class="help">Replace or extend this group based on your justified field inventory.</p>
+                <legend>F3 · About you</legend>
+
                 <div class="field">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name">
+                    <label for="nickname">First name or nickname (required)</label>
+                    <p class="help" id="nickname-help">Up to 40 characters.</p>
+                    <input id="nickname" name="nickname" type="text" autocomplete="given-name" maxlength="40" required
+                        aria-describedby="nickname-help">
                 </div>
+
                 <div class="field">
                     <label for="email">Email address (required)</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
+                    <p class="help" id="email-help">Example: name@example.com</p>
+                    <input id="email" name="email" type="email" autocomplete="email" required
+                        aria-describedby="email-help">
                 </div>
+
+                <label class="choice">
+                    <input type="checkbox" name="reminder" value="yes"> Send me a reminder email the day before
+                </label>
             </fieldset>
             <fieldset>
                 <legend>F3 · Request choices</legend>
