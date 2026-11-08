@@ -116,3 +116,4 @@ button:disabled{
         gap:1rem;
     }
 }
+.is-focus { outline: .2rem solid var(--color-accent); outline-offset: .2rem; }
