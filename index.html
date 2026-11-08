@@ -99,19 +99,61 @@
         </form>
         <section id="states">
             <h2>F5 · State and Recovery Specimen</h2>
-            <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep
-                this section separate from the primary blank form when necessary to avoid misleading users.</p>
+            <p>These examples are for display only. They show how fields look in each state.</p>
+
+            <div class="field">
+                <h3>Default</h3>
+                <label for="spec-default">First name or nickname</label>
+                <input id="spec-default" type="text">
+            </div>
+
+            <div class="field">
+                <h3>Focus</h3>
+                <label for="spec-focus">First name or nickname</label>
+                <input id="spec-focus" class="is-focus" type="text">
+            </div>
+
+            <div class="field">
+                <h3>Required</h3>
+                <label for="spec-required">Email address (required)</label>
+                <input id="spec-required" type="email" required>
+            </div>
+
+            <div class="field field-valid">
+                <h3>Valid</h3>
+                <label for="spec-valid">Email address (required)</label>
+                <input id="spec-valid" type="email" value="sam@example.com" aria-describedby="spec-valid-msg">
+                <p id="spec-valid-msg">✓ Looks good.</p>
+            </div>
+
+            <div class="field field-error">
+                <h3>Invalid</h3>
+                <label for="spec-invalid">How many plants are you bringing? (required)</label>
+                <input id="spec-invalid" type="number" value="8" aria-invalid="true"
+                    aria-describedby="spec-invalid-msg">
+                <p id="spec-invalid-msg">Error: Enter a number from 1 to 5.</p>
+            </div>
+
+            <div class="field">
+                <h3>Disabled</h3>
+                <label for="spec-disabled">Which session?</label>
+                <select id="spec-disabled" disabled>
+                    <option>Sunday morning (full)</option>
+                </select>
+            </div>
+
+            <h3>Server-returned error</h3>
             <div class="error-summary">
-                <h3>There is a problem with the fictional submission</h3>
+                <p>There is a problem with your registration.</p>
                 <p><a href="#error-example">Email address needs attention</a></p>
             </div>
             <div class="field field-error">
-                <label for="error-example">Email address</label>
-                <input id="error-example" type="email" value="alex.example" aria-invalid="true"
+                <label for="error-example">Email address (required)</label>
+                <input id="error-example" type="email" value="sam.example" aria-invalid="true"
                     aria-describedby="error-message">
-                <p id="error-message"><strong>Error:</strong> Enter an address in the format name@example.com.</p>
+                <p id="error-message">Error: Enter a full email address, such as name@example.com. Your entry is shown
+                    above so you can fix it.</p>
             </div>
-            <button type="button" disabled>Disabled example</button>
         </section>
         <section id="documentation">
             <h2>F2 and F6 · Planning and Evidence</h2>
