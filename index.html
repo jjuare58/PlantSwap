@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Inclusive Form Flow</title>
+    <title>Plant Swap Registration</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -227,8 +227,77 @@
         </section>
         <section id="documentation">
             <h2>F2 and F6 · Planning and Evidence</h2>
-            <p>Link your field inventory, state matrix, fictional test-data list, completed test record, and AI
-                disclosure.</p>
+
+            <h3>Links</h3>
+            <ul>
+                <li><a href="field-inventory-template.html">F2 field inventory (task and data plan)</a></li>
+                <li><a href="#states">F5 state specimen and state matrix</a></li>
+            </ul>
+
+            <h3>Fictional test data</h3>
+            <ul>
+                <li>Valid: Fern, fern@example.com, Saturday morning, 3 plants, houseplants and herbs, easy care, "a
+                    snake plant", pest-free checked.</li>
+                <li>Empty: all fields left blank.</li>
+                <li>Malformed: email "fern.example" and plant count "2.5".</li>
+                <li>Boundary minimum: nickname "F" (1 character) and 1 plant.</li>
+                <li>Boundary maximum: a 40-character nickname, 5 plants, and a 300-character wishlist.</li>
+                <li>Over the limit: 6 plants.</li>
+            </ul>
+
+            <h3>Test record</h3>
+            <div class="table-region" role="region" aria-label="Test record" tabindex="0">
+                <table>
+                    <caption>Required tests and results</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Test</th>
+                            <th scope="col">Result</th>
+                            <th scope="col">Issue and fix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">HTML and CSS validation</th>
+                            <td>To do</td>
+                            <td>To do</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Keyboard-only completion and submit</th>
+                            <td>To do</td>
+                            <td>To do</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Accessible names and groups</th>
+                            <td>To do</td>
+                            <td>To do</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Empty, malformed, boundary, and valid submissions</th>
+                            <td>To do</td>
+                            <td>To do</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">320px, 768px, and 1280px</th>
+                            <td>To do</td>
+                            <td>To do</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">200% zoom</th>
+                            <td>To do</td>
+                            <td>To do</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Focus visibility and touch targets</th>
+                            <td>To do</td>
+                            <td>To do</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>AI disclosure</h3>
+            <p>To do.</p>
         </section>
     </main>
 </body>
