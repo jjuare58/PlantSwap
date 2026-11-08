@@ -30,7 +30,7 @@
         </head>
         <body>
             <h1>F2 · Task and Data Plan</h1>
-            <p>Duplicate rows as needed. Justify every collected value.</p>
+            <p>Task: Plant swap registration. Every value below is needed to plan tables and confirm a spot. No last name, phone, address, or age is collected.</p>
             <table>
                 <thead>
                     <tr>
@@ -46,14 +46,94 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Example only</td>
-                        <td>Replace</td>
-                        <td>Yes/No</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace or N/A</td>
-                        <td>Replace or none</td>
-                        <td>Replace</td>
+                        <td>First name or nickname</td>
+                        <td>Organizers use it to greet you and make your name tag.</td>
+                        <td>Yes</td>
+                        <td>input type="text"</td>
+                        <td>name="nickname"</td>
+                        <td>autocomplete="given-name"</td>
+                        <td>Up to 40 characters (maxlength="40").</td>
+                        <td>Low. Only a first name or nickname is asked for; no last name.</td>
+                    </tr>
+                    <tr>
+                        <td>Email address</td>
+                        <td>Needed to send the registration confirmation and swap details.</td>
+                        <td>Yes</td>
+                        <td>input type="email"</td>
+                        <td>name="email"</td>
+                        <td>autocomplete="email"</td>
+                        <td>Must be a full address. Example shown: name@example.com.</td>
+                        <td>Medium (contact info). Used only for this event. No phone number is collected.</td>
+                    </tr>
+                    <tr>
+                        <td>Send me a reminder the day before</td>
+                        <td>Lets people choose whether they want one extra email.</td>
+                        <td>No</td>
+                        <td>input type="checkbox"</td>
+                        <td>name="reminder" value="yes"</td>
+                        <td>N/A</td>
+                        <td>None. Unchecked by default (opt-in).</td>
+                        <td>Low. Optional, and off unless the user turns it on.</td>
+                    </tr>
+                    <tr>
+                        <td>Which session?</td>
+                        <td>Organizers need to know how many people come to each session.</td>
+                        <td>Yes</td>
+                        <td>select</td>
+                        <td>name="session" values: sat-am, sat-pm, sun-am</td>
+                        <td>N/A</td>
+                        <td>Choose one. First option "Select a session" has an empty value so required works.</td>
+                        <td>None. Not personal information.</td>
+                    </tr>
+                    <tr>
+                        <td>How many plants are you bringing?</td>
+                        <td>Used to plan table space for the swap.</td>
+                        <td>Yes</td>
+                        <td>input type="number"</td>
+                        <td>name="plant_count"</td>
+                        <td>inputmode="numeric"</td>
+                        <td>Whole number from 1 to 5 (min="1" max="5").</td>
+                        <td>None. Not personal information.</td>
+                    </tr>
+                    <tr>
+                        <td>What kinds of plants?</td>
+                        <td>Helps organizers group similar plants on the same tables.</td>
+                        <td>No</td>
+                        <td>input type="checkbox" group (fieldset + legend)</td>
+                        <td>name="plant_types" values: succulents, houseplants, herbs, cuttings</td>
+                        <td>N/A</td>
+                        <td>Choose any that apply.</td>
+                        <td>None. Not personal information.</td>
+                    </tr>
+                    <tr>
+                        <td>Care level of your plants</td>
+                        <td>Lets tables be labeled so swappers find plants that match their experience.</td>
+                        <td>Yes</td>
+                        <td>input type="radio" group (fieldset + legend)</td>
+                        <td>name="care_level" values: easy, medium, expert</td>
+                        <td>N/A</td>
+                        <td>Choose one.</td>
+                        <td>None. Not personal information.</td>
+                    </tr>
+                    <tr>
+                        <td>Plants you're hoping to find</td>
+                        <td>Helps organizers suggest good trades.</td>
+                        <td>No</td>
+                        <td>textarea</td>
+                        <td>name="wishlist"</td>
+                        <td>N/A</td>
+                        <td>Up to 300 characters (maxlength="300").</td>
+                        <td>Low. Help text asks users not to include personal details.</td>
+                    </tr>
+                    <tr>
+                        <td>I confirm my plants are free of pests</td>
+                        <td>Protects other swappers' plants from bugs and disease.</td>
+                        <td>Yes</td>
+                        <td>input type="checkbox"</td>
+                        <td>name="pest_free" value="confirmed"</td>
+                        <td>N/A</td>
+                        <td>Must be checked to submit.</td>
+                        <td>None. Not personal information.</td>
                     </tr>
                 </tbody>
             </table>
