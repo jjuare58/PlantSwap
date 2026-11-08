@@ -47,14 +47,57 @@
                     <input type="checkbox" name="reminder" value="yes"> Send me a reminder email the day before
                 </label>
             </fieldset>
+
+
             <fieldset>
-                <legend>F3 · Request choices</legend>
-                <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
+                <legend>F3 · Your swap</legend>
+
+                <div class="field">
+                    <label for="session">Which session? (required)</label>
+                    <select id="session" name="session" required>
+                        <option value="">Select a session</option>
+                        <option value="sat-am">Saturday morning</option>
+                        <option value="sat-pm">Saturday afternoon</option>
+                        <option value="sun-am">Sunday morning</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="plant-count">How many plants are you bringing? (required)</label>
+                    <p class="help" id="plant-count-help">Enter a number from 1 to 5.</p>
+                    <input id="plant-count" name="plant_count" type="number" inputmode="numeric" min="1" max="5"
+                        required aria-describedby="plant-count-help">
+                </div>
+
+                <fieldset>
+                    <legend>What kinds of plants? Choose any that apply.</legend>
+                    <label class="choice"><input type="checkbox" name="plant_types" value="succulents"> Succulents and
+                        cacti</label>
+                    <label class="choice"><input type="checkbox" name="plant_types" value="houseplants">
+                        Houseplants</label>
+                    <label class="choice"><input type="checkbox" name="plant_types" value="herbs"> Herbs</label>
+                    <label class="choice"><input type="checkbox" name="plant_types" value="cuttings"> Cuttings</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Care level of your plants (required)</legend>
+                    <label class="choice"><input type="radio" name="care_level" value="easy" required> Easy</label>
+                    <label class="choice"><input type="radio" name="care_level" value="medium"> Medium</label>
+                    <label class="choice"><input type="radio" name="care_level" value="expert"> Expert</label>
+                </fieldset>
+
+                <div class="field">
+                    <label for="wishlist">Plants you're hoping to find</label>
+                    <p class="help" id="wishlist-help">Up to 300 characters. Please don't include personal details.</p>
+                    <textarea id="wishlist" name="wishlist" maxlength="300" aria-describedby="wishlist-help"></textarea>
+                </div>
+
                 <label class="choice">
-                    <input type="radio" name="request_type" value="option-a"> Replace with option A</label>
-                <label class="choice"><input type="radio" name="request_type" value="option-b"> Replace with option
-                    B</label>
+                    <input type="checkbox" name="pest_free" value="confirmed" required> I confirm my plants are free of
+                    pests (required)
+                </label>
             </fieldset>
+            <button type="submit">Register for the swap</button>
             <div class="field">
                 <label for="details">Request details</label>
                 <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
