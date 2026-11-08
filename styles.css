@@ -1,120 +1,304 @@
-:root{
-    --color-text:#404040;
-    --color-surface:#fff;
-    --color-action:#8c1d40;
-    --color-accent:#ffc627;
-    --color-border:#747474;
-    --color-error:#b3261e;
-    --color-muted:#5c6670;
-    --space-3:1rem;
-    --radius:.5rem;
-    --measure:68ch;
+/* =============================================
+   Plant Swap Registration
+   This page uses my Module 1 "Lunaris" design system
+   so it matches the colors, fonts, and buttons I made before.
+   1. Tokens
+   2. Reset
+   3. Text
+   4. Header
+   5. Layout
+   6. Form controls
+   7. Buttons
+   8. Focus
+   9. States (F5 examples)
+   10. Tables
+   ============================================= */
+
+
+/* ---------- 1. TOKENS ---------- */
+
+/* Stores my Lunaris colors, sizes, and fonts in one place
+   so I can reuse them everywhere instead of typing them again */
+:root {
+  /* Colors */
+  --color-bg: #F6F1E7;            /* cream background for the page */
+  --color-surface: #FFFCF6;       /* lighter background for boxes and inputs */
+  --color-surface-alt: #EDE5D6;   /* background for things that are turned off */
+  --color-text: #1D1A18;          /* main text color, almost black */
+  --color-muted: #5A524B;         /* lighter color for hint text */
+  --color-border: #857A6D;        /* border color for inputs and boxes */
+  --color-action: #9B1C1F;        /* red color for the header, button, and links */
+  --color-action-hover: #7A1418;  /* darker red when hovering over the button */
+  --color-on-action: #FFFFFF;     /* white text that sits on top of red */
+  --color-focus: #1D1A18;         /* outline color when using the keyboard */
+  --color-error: #b3261e;         /* red for error messages (new for this form) */
+
+  /* Spacing and sizes */
+  --space-3: 1rem;      /* standard space around the page */
+  --radius: 8px;        /* how rounded the corners of boxes are */
+  --radius-pill: 999px; /* makes the button fully rounded like a pill */
+  --measure: 65ch;      /* keeps long text from stretching too wide */
+
+  /* Fonts */
+  --font-display: "DM Serif Display", Georgia, serif;  /* fancy font for headings */
+  --font-body: "Montserrat", Arial, sans-serif;        /* easy-to-read font for everything else */
 }
-*,*::before,*::after{
-    box-sizing:border-box;
+
+
+/* ---------- 2. RESET ---------- */
+
+/* Makes sure padding and borders are included in the element's total width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-body{
-    margin:0;
-    color:var(--color-text);
-    background:var(--color-surface);
-    font-family:Arial,sans-serif;
-    line-height:1.6;
+
+/* Removes the default space around the page and sets the main colors and font */
+body {
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  line-height: 1.6;
 }
-.page-header{
-    padding:clamp(2rem,6vw,5rem);
-    background:var(--color-action);
-    color:#fff;
+
+
+/* ---------- 3. TEXT ---------- */
+
+/* Makes all headings use my Lunaris heading font */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
 }
-.eyebrow{
-    color:var(--color-accent);
-    font-weight:700;
+
+/* Uses the red action color for links */
+a {
+  color: var(--color-action);
 }
-.lede{
-    max-width:var(--measure);
-    font-size:1.25rem;
+
+/* Makes the underline thicker when hovering over a link */
+a:hover {
+  text-decoration-thickness: 2px;
 }
-main{
-    max-width:52rem;
-    margin:auto;
-    padding:var(--space-3);
+
+
+/* ---------- 4. HEADER ---------- */
+
+/* Gives the top of the page a red background with white text */
+.page-header {
+  padding: clamp(2rem, 6vw, 5rem);  /* more space on big screens, less on phones */
+  background: var(--color-action);
+  color: var(--color-on-action);
 }
-section,form{
-    margin-block:2rem;
+
+/* The small label above the title ("Event Registration") */
+.eyebrow {
+  color: var(--color-on-action);
+  font-weight: 700;
+  text-transform: uppercase;  /* shows it in all capital letters */
+  letter-spacing: 0.08em;     /* adds a little space between letters */
 }
-form,fieldset,.field{
-    display:grid;
-    gap:.65rem;
+
+/* The intro paragraph under the title */
+.lede {
+  max-width: var(--measure);
+  font-size: 1.25rem;
 }
-form{
-    gap:1.5rem;
+
+
+/* ---------- 5. LAYOUT ---------- */
+
+/* Keeps the page content centered and not too wide */
+main {
+  max-width: 52rem;
+  margin: auto;
+  padding: var(--space-3);
 }
-fieldset{
-    padding:1rem;
-    border:1px solid #d0d0d0;
-    border-radius:var(--radius);
+
+/* Adds space above and below each section and the form */
+section,
+form {
+  margin-block: 2rem;
 }
-legend,label{
-    font-weight:700;
+
+/* Stacks the form pieces on top of each other with space between them */
+form,
+fieldset,
+.field {
+  display: grid;
+  gap: 0.65rem;
 }
-.help{
-    margin:0;
-    color:var(--color-muted);
+
+/* Adds a little more space between the big parts of the form */
+form {
+  gap: 1.5rem;
 }
-input,select,textarea,button{
-    font:inherit;
+
+/* Puts each group of questions in a box with rounded corners */
+fieldset {
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
 }
-input:not([type="radio"]):not([type="checkbox"]),select,textarea{
-    width:100%;
-    padding:.75rem;
-    border:2px solid var(--color-border);
-    border-radius:.25rem;
+
+/* Makes question labels and group titles bold */
+legend,
+label {
+  font-weight: 700;
 }
-textarea{
-    min-height:8rem;
-    resize:vertical;
+
+/* Makes the hint text (like "Up to 40 characters") lighter and smaller-looking */
+.help {
+  margin: 0;
+  color: var(--color-muted);
 }
-.choice{
-    display:flex;
-    gap:.65rem;
-    align-items:flex-start;
-    padding:.5rem 0;
+
+
+/* ---------- 6. FORM CONTROLS ---------- */
+
+/* Makes inputs and buttons use the same font as the page */
+input,
+select,
+textarea,
+button {
+  font: inherit;
 }
-.choice input{
-    inline-size:1.25rem;
-    block-size:1.25rem;
+
+/* Styles text boxes, dropdowns, and the text area (but not checkboxes or radio buttons) */
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: 0.25rem;
 }
-button{
-    justify-self:start;
-    min-height:44px;
-    padding:.75rem 1rem;
-    background:var(--color-action);
-    color:#fff;
-    border:2px solid var(--color-action);
-    border-radius:.25rem;
-    font-weight:700;
+
+/* Makes the text area taller and only lets people stretch it up and down */
+textarea {
+  min-height: 8rem;
+  resize: vertical;
 }
-:focus-visible{
-    outline:.2rem solid var(--color-accent);
-    outline-offset:.2rem;
+
+/* Lines up each checkbox or radio button with its words */
+.choice {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  font-weight: 400;  /* answer choices are normal text, not bold */
 }
-.error-summary,.field-error{
-    padding:1rem;
-    border-left:.4rem solid var(--color-error);
-    background:#fff1f0;
+
+/* Makes checkboxes and radio buttons bigger and uses my red color when checked */
+.choice input {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  accent-color: var(--color-action);
 }
-.field-error input{
-    border-color:var(--color-error);
+
+
+/* ---------- 7. BUTTONS ---------- */
+
+/* My Lunaris pill-shaped red button */
+button {
+  justify-self: start;   /* keeps the button from stretching across the page */
+  min-height: 44px;      /* big enough to tap easily on a phone */
+  padding: 0.75rem 1.5rem;
+  background: var(--color-action);
+  color: var(--color-on-action);
+  border: 2px solid var(--color-action);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  cursor: pointer;
 }
-button:disabled{
-    opacity:.55;
-    cursor:not-allowed;
+
+/* Makes the button darker when hovering over it */
+button:hover {
+  background: var(--color-action-hover);
+  border-color: var(--color-action-hover);
 }
-@media (min-width:48rem){
-    .paired-fields{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:1rem;
-    }
+
+/* Makes turned-off buttons look gray and shows they can't be clicked */
+button:disabled {
+  background: var(--color-surface-alt);
+  border-color: var(--color-border);
+  color: var(--color-muted);
+  cursor: not-allowed;
 }
-.is-focus { outline: .2rem solid var(--color-accent); outline-offset: .2rem; }
-.table-region { overflow-x: auto; }
+
+/* Makes turned-off dropdowns look gray too (used in the Disabled example) */
+select:disabled {
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+
+/* ---------- 8. FOCUS ---------- */
+
+/* Adds my Lunaris thick dark outline when someone uses the Tab key */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 9. STATES (F5 examples) ---------- */
+
+/* Gives error boxes a red bar on the left and a light pink background
+   so errors don't rely on color alone */
+.error-summary,
+.field-error {
+  padding: 1rem;
+  border-left: 0.4rem solid var(--color-error);
+  background: #fff1f0;
+}
+
+/* Gives the box with the mistake a red border */
+.field-error input {
+  border-color: var(--color-error);
+}
+
+/* Copies the real focus outline so the Focus example always shows it */
+.is-focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 10. TABLES ---------- */
+
+/* Lets wide tables scroll sideways on phones instead of breaking the page */
+.table-region {
+  overflow-x: auto;
+}
+
+/* Makes the table fill the space and joins the cell borders together */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+}
+
+/* Puts the table title on the left and makes it bold */
+caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+
+/* Adds space and borders to every table cell */
+th,
+td {
+  padding: 0.6rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
