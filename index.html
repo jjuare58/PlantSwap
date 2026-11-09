@@ -241,8 +241,8 @@
 
             <h3>Fictional test data</h3>
             <ul>
-                <li>Valid: Fern, fern@example.com, Saturday morning, 3 plants, houseplants and herbs, easy care, "a
-                    snake plant", pest-free checked.</li>
+                <li>Valid: Lou, lou@example.com, Saturday morning, 3 plants, succulents, easy care, "a snake plant",
+                    pest-free checked.</li>
                 <li>Empty: all fields left blank.</li>
                 <li>Malformed: email "fern.example" and plant count "2.5".</li>
                 <li>Boundary minimum: nickname "F" (1 character) and 1 plant.</li>
@@ -270,23 +270,26 @@
                         </tr>
                         <tr>
                             <th scope="row">Keyboard-only completion and submit</th>
-                            <td>To do</td>
-                            <td>To do</td>
+                            <td>Pass. All fields reached with Tab, arrow keys, and Space; form submitted with Enter.
+                            </td>
+                            <td>No issues. Dark focus outline was visible on every field.</td>
                         </tr>
                         <tr>
                             <th scope="row">Accessible names and groups</th>
-                            <td>To do</td>
-                            <td>To do</td>
+                            <td>Pass. Text, select, checkbox, radio, and textarea all have accessible names from their
+                                labels; checkbox and radio choices are grouped by their legends.</td>
+                            <td>No issues.</td>
                         </tr>
                         <tr>
                             <th scope="row">Empty, malformed, boundary, and valid submissions</th>
-                            <td>To do</td>
-                            <td>To do</td>
+                            <td>Pass. The form stopped empty answers, a bad email, 2.5 plants, and 6 plants, and showed
+                                a message each time. The smallest answers (1 letter, 1 plant), the biggest answers (40
+                                letters, 5 plants), and a normal answer all submitted.</td>
+                            <td>No issues. The form's built-in rules worked the way I planned.</td>
                         </tr>
                         <tr>
                             <th scope="row">320px, 768px, and 1280px</th>
-                            <td>To do</td>
-                            <td>To do</td>
+                            <td>Pass. The form is responsive and adapts to different screen sizes.</td>
                         </tr>
                         <tr>
                             <th scope="row">200% zoom</th>
